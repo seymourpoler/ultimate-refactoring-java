@@ -7,6 +7,8 @@ Refactoring workshop notes:
    - signatureChange:
        - first do it using parallel change, like in JavaScript
        - second, try something smarter
+             - parallel change + inline
+             - parameter object
    - implementationChange:
        - replace int with Price in add method
        - replace return value of calculateTotalPrice to make it Price
