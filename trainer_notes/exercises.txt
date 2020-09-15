@@ -9,6 +9,7 @@ Refactoring workshop notes:
        - second, try something smarter
              - parallel change + inline
              - parameter object
+       - csv builder, remove middle method
    - implementationChange:
        - replace int with Price in add method
        - replace return value of calculateTotalPrice to make it Price
