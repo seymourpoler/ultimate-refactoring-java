@@ -1,8 +1,7 @@
 package untestableLegacy;
 
 /*
- * This code has been extracted from OpenbravoERP:
- * https://code.openbravo.com/erp/stable/2.50-bp/file/cec9b1da72ed/src/org/openbravo/base/model/Entity.java
+ * This code was extracted from an open source project, from the real world :-)
  */
 
 class Log{
@@ -14,8 +13,7 @@ class Log{
 public class Entity {
 	private static final char[] ILLEGAL_ENTITY_NAME_CHARS = new char[]{'*', '?'};
 	private String name;
-	public Log log = new Log();
-	
+
 	public void setName(String name) {
 	    // repair the name if it contains any illegal character
 	    this.name = removeIllegalChars(name);
@@ -39,6 +37,7 @@ public class Entity {
 	      }
 	      newName.append(c);
 	    }
+	    Log log = new Log();
 	    if (nameChanged) {
 	      log.warn("The entity name " + fromName
 	          + " contains illegal characters, it has been repaired to " + newName);
