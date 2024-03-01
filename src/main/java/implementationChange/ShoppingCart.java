@@ -15,11 +15,15 @@ public class ShoppingCart {
     }
 
     public int calculateTotalPrice() {
-        return prices.stream().mapToInt(price -> price.value).sum();
+        return this.getTotalPrice().value;
     }
 
     public boolean hasDiscount() {
         final int discountThreshold = 100;
        return calculateTotalPrice() >= discountThreshold;
+    }
+
+    private Price getTotalPrice() {
+        return new Price(prices.stream().mapToInt(price -> price.value).sum());
     }
 }
