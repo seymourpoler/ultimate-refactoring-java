@@ -4,12 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShoppingCart {
-    private int price;
     private List<Price> prices = new ArrayList<>();
-
-    public void add(int price) {
-        this.price = price;
-    }
 
     public void add(Price price) {
         this.prices.add(price);

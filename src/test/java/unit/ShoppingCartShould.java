@@ -6,21 +6,12 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class ShoppingCartShould {
-    @Test
-    public void count_number_of_products() throws Exception {
-        ShoppingCart shoppingCart = new ShoppingCart();
-
-        shoppingCart.add(10);
-
-        Assert.assertEquals(1, shoppingCart.numberOfProducts());
-    }
 
     @Test
     public void count_number_of_products_2() throws Exception {
         var shoppingCart = new ShoppingCart();
-        var price = new Price(10);
 
-        shoppingCart.add(price);
+        shoppingCart.add(new Price(10));
 
         Assert.assertEquals(1, shoppingCart.numberOfProducts());
     }
@@ -66,14 +57,6 @@ public class ShoppingCartShould {
     public void no_discount_applicable() throws Exception {
         ShoppingCart shoppingCart = new ShoppingCart();
         shoppingCart.add(new Price(99));
-
-        Assert.assertFalse(shoppingCart.hasDiscount());
-    }
-
-    @Test
-    public void know_when_is_not_possible_to_apply_discount() throws Exception {
-        ShoppingCart shoppingCart = new ShoppingCart();
-        shoppingCart.add(99);
 
         Assert.assertFalse(shoppingCart.hasDiscount());
     }
