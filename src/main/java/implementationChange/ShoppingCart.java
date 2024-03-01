@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShoppingCart {
-    private List<Price> prices = new ArrayList<>();
+    private final List<Price> prices = new ArrayList<>();
 
     public void add(Price price) {
         this.prices.add(price);
@@ -19,6 +19,7 @@ public class ShoppingCart {
     }
 
     public boolean hasDiscount() {
-       return calculateTotalPrice() >= 100;
+        final int discountThreshold = 100;
+       return calculateTotalPrice() >= discountThreshold;
     }
 }
