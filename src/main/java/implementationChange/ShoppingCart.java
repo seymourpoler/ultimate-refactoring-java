@@ -19,8 +19,7 @@ public class ShoppingCart {
     }
 
     public boolean hasDiscount() {
-        final int discountThreshold = 100;
-       return calculateTotalPrice() >= discountThreshold;
+       return new DiscountValidator(getTotalPrice()).hasDiscountMoreThan100();
     }
 
     private Price getTotalPrice() {

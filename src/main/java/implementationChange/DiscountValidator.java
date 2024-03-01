@@ -8,7 +8,7 @@ public class DiscountValidator {
         this.price = price;
     }
 
-    public boolean hasDiscountMoreThan100() throws ExecutionControl.NotImplementedException {
+    public boolean hasDiscountMoreThan100() {
         return price.value >= 100;
     }
 }
