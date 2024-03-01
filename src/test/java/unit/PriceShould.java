@@ -23,14 +23,14 @@ public class PriceShould {
     }
 
     @Test
-    public void be_equal() throws Exception {
+    public void be_more_or_equal() throws Exception {
         var price = new Price(10);
-        Assert.assertTrue(price.isEqual(new Price(10)));
+        Assert.assertTrue(price.isMoreOrEqualThan(new Price(10)));
     }
 
     @Test
-    public void not_be_equal() throws Exception {
+    public void not_be_more_or_equal() throws Exception {
         var price = new Price(10);
-        Assert.assertFalse(price.isEqual(new Price(20)));
+        Assert.assertFalse(price.isMoreOrEqualThan(new Price(20)));
     }
 }

@@ -10,7 +10,7 @@ public class Price {
         this.value = value;
     }
 
-    public boolean isEqual(Price price) {
+    public boolean isMoreOrEqualThan(Price price) {
         return price.value == value;
     }
 }
