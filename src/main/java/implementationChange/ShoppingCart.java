@@ -15,14 +15,6 @@ public class ShoppingCart {
         this.prices.add(price);
     }
 
-    public int calculateTotalPrice() {
-        return price;
-    }
-
-    public boolean hasDiscount() {
-        return price >= 100;
-    }
-
     public int numberOfProducts() {
         return 1;
     }
@@ -31,11 +23,11 @@ public class ShoppingCart {
         return prices.size();
     }
 
-    public int getTotalPrice() {
+    public int calculateTotalPrice() {
         return prices.stream().mapToInt(price -> price.value).sum();
     }
 
-    public boolean hasDiscountTotalPrice() {
-       return getTotalPrice() >= 100;
+    public boolean hasDiscount() {
+       return calculateTotalPrice() >= 100;
     }
 }

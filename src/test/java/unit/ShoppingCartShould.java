@@ -36,20 +36,12 @@ public class ShoppingCartShould {
     }
 
     @Test
-    public void calculate_total_price() throws Exception {
-        ShoppingCart shoppingCart = new ShoppingCart();
-        shoppingCart.add(10);
-
-        Assert.assertEquals(10, shoppingCart.calculateTotalPrice());
-    }
-
-    @Test
     public void calculate_total_price2() throws Exception {
         ShoppingCart shoppingCart = new ShoppingCart();
 
         shoppingCart.add(new Price(10));
 
-        Assert.assertEquals(10, shoppingCart.getTotalPrice());
+        Assert.assertEquals(10, shoppingCart.calculateTotalPrice());
     }
 
     @Test
@@ -59,15 +51,7 @@ public class ShoppingCartShould {
         shoppingCart.add(new Price(10));
         shoppingCart.add(new Price(20));
 
-        Assert.assertEquals(30, shoppingCart.getTotalPrice());
-    }
-
-    @Test
-    public void know_when_is_discount_applicable() throws Exception {
-        ShoppingCart shoppingCart = new ShoppingCart();
-        shoppingCart.add(100);
-
-        Assert.assertTrue(shoppingCart.hasDiscount());
+        Assert.assertEquals(30, shoppingCart.calculateTotalPrice());
     }
 
     @Test
@@ -75,7 +59,7 @@ public class ShoppingCartShould {
         ShoppingCart shoppingCart = new ShoppingCart();
         shoppingCart.add(new Price(100));
 
-        Assert.assertTrue(shoppingCart.hasDiscountTotalPrice());
+        Assert.assertTrue(shoppingCart.hasDiscount());
     }
 
     @Test
@@ -83,7 +67,7 @@ public class ShoppingCartShould {
         ShoppingCart shoppingCart = new ShoppingCart();
         shoppingCart.add(new Price(99));
 
-        Assert.assertFalse(shoppingCart.hasDiscountTotalPrice());
+        Assert.assertFalse(shoppingCart.hasDiscount());
     }
 
     @Test
