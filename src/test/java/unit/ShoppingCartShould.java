@@ -71,6 +71,22 @@ public class ShoppingCartShould {
     }
 
     @Test
+    public void know_when_is_discount_applicable2() throws Exception {
+        ShoppingCart shoppingCart = new ShoppingCart();
+        shoppingCart.add(new Price(100));
+
+        Assert.assertTrue(shoppingCart.hasDiscountTotalPrice());
+    }
+
+    @Test
+    public void no_discount_applicable() throws Exception {
+        ShoppingCart shoppingCart = new ShoppingCart();
+        shoppingCart.add(new Price(99));
+
+        Assert.assertFalse(shoppingCart.hasDiscountTotalPrice());
+    }
+
+    @Test
     public void know_when_is_not_possible_to_apply_discount() throws Exception {
         ShoppingCart shoppingCart = new ShoppingCart();
         shoppingCart.add(99);

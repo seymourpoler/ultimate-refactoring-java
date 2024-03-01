@@ -34,4 +34,8 @@ public class ShoppingCart {
     public int getTotalPrice() {
         return prices.stream().mapToInt(price -> price.value).sum();
     }
+
+    public boolean hasDiscountTotalPrice() {
+       return getTotalPrice() >= 100;
+    }
 }
