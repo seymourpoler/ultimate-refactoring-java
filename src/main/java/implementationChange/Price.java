@@ -9,4 +9,8 @@ public class Price {
         }
         this.value = value;
     }
+
+    public boolean isEqual(Price price) {
+        return price.value == value;
+    }
 }

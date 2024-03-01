@@ -21,4 +21,16 @@ public class PriceShould {
         Assertions.assertNotNull(price);
         Assert.assertEquals(10, price.value);
     }
+
+    @Test
+    public void be_equal() throws Exception {
+        var price = new Price(10);
+        Assert.assertTrue(price.isEqual(new Price(10)));
+    }
+
+    @Test
+    public void not_be_equal() throws Exception {
+        var price = new Price(10);
+        Assert.assertFalse(price.isEqual(new Price(20)));
+    }
 }
