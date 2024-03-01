@@ -23,7 +23,7 @@ public class ShoppingCartShould {
         shoppingCart.add(new Price(10));
         shoppingCart.add(new Price(20));
 
-        Assert.assertEquals(2, shoppingCart.productsNumber());
+        Assert.assertEquals(2, shoppingCart.numberOfProducts());
     }
 
     @Test
