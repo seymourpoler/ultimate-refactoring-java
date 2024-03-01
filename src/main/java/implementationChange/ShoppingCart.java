@@ -19,7 +19,7 @@ public class ShoppingCart {
     }
 
     public boolean hasDiscount() {
-       return new DiscountValidator(getTotalPrice()).hasDiscountMoreThan100();
+       return new DiscountValidator(getTotalPrice()).hasDiscount100();
     }
 
     private Price getTotalPrice() {

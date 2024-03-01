@@ -7,7 +7,7 @@ public class DiscountValidator {
         this.price = price;
     }
 
-    public boolean hasDiscountMoreThan100() {
+    public boolean hasDiscount100() {
         final int DISCOUNT_100 = 100;
         return price.isMoreOrEqualThan(new Price(DISCOUNT_100));
     }
